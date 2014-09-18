@@ -39,13 +39,13 @@ Then you can access members like this:
 
 ```bash
 # print whole file:
-jsonql.py example.json
+$ jsonql.py example.json
 
 # print value of menu.id:
-jsonql.py example.json menu.id
+$ jsonql.py example.json menu.id
 
 # print second menuitem:
-jsonql.py example.json menu.popup.menuitem[1]
+$ jsonql.py example.json menu.popup.menuitem[1]
 ```
 
 flattenDict.py
@@ -53,7 +53,7 @@ flattenDict.py
 
 A method to convert a list of dictionaries to a list of lists in a csv style.
 
-Usage:
+### Usage as method:
 
 ```python
 listOfDicts = [
@@ -83,4 +83,17 @@ Value of listOfLists:
   ['OpenDoc()', 'Open'],
   ['CloseDoc()', 'Close']
 ]
+```
+
+### Usage as command:
+
+Suppose you have a file "listOfDicts.json" which contains the listOfDicts structure from the example above.
+
+```bash
+$ flattenDict.py listOfDicts.json
+
+"onclick","value"
+"CreateNewDoc()","New"
+"OpenDoc()","Open"
+"CloseDoc()","Close"
 ```
