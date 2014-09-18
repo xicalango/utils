@@ -4,7 +4,7 @@ utils
 Some useful utility scripts.
 
 jsonql.py
-=========
+---------
 
 A small query language for quick analyses of json files.
 
@@ -46,4 +46,41 @@ jsonql.py example.json menu.id
 
 # print second menuitem:
 jsonql.py example.json menu.popup.menuitem[1]
+```
+
+flattenDict.py
+--------------
+
+A method to convert a list of dictionaries to a list of lists in a csv style.
+
+Usage:
+
+```python
+listOfDicts = [
+  {
+    "onclick": "CreateNewDoc()",
+    "value": "New"
+  },
+  {
+    "onclick": "OpenDoc()",
+    "value": "Open"
+  },
+  {
+    "onclick": "CloseDoc()",
+    "value": "Close"
+  }
+]
+
+listOfLists = flattenDict(listOfDicts, includeHeaders=True)
+```
+
+Value of listOfLists:
+
+```
+[
+  ['onclick', 'value'], #headers
+  ['CreateNewDoc()', 'New'], 
+  ['OpenDoc()', 'Open'],
+  ['CloseDoc()', 'Close']
+]
 ```
