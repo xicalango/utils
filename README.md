@@ -37,7 +37,7 @@ Suppose you have a file called "[example.json](http://json.org/example)":
 
 Then you can access members like this:
 
-```
+```bash
 # print whole file:
 jsonql.py example.json
 
@@ -76,7 +76,7 @@ listOfLists = flattenDict(listOfDicts, includeHeaders=True)
 
 Value of listOfLists:
 
-```
+```python
 [
   ['onclick', 'value'], #headers
   ['CreateNewDoc()', 'New'], 
