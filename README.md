@@ -8,20 +8,31 @@ jsonql.py
 
 A small query language for quick analyses of json files.
 
-Suppose you have a file called "example.json":
+Suppose you have a file called "[example.json](http://json.org/example)":
 
 ```json
-{"menu": {
-  "id": "file",
-  "value": "File",
-  "popup": {
-    "menuitem": [
-      {"value": "New", "onclick": "CreateNewDoc()"},
-      {"value": "Open", "onclick": "OpenDoc()"},
-      {"value": "Close", "onclick": "CloseDoc()"}
-    ]
+{
+  "menu": {
+    "id": "file",
+    "popup": {
+      "menuitem": [
+        {
+          "onclick": "CreateNewDoc()",
+          "value": "New"
+        },
+        {
+          "onclick": "OpenDoc()",
+          "value": "Open"
+        },
+        {
+          "onclick": "CloseDoc()",
+          "value": "Close"
+        }
+      ]
+    },
+    "value": "File"
   }
-}}
+}
 ```
 
 Then you can access members like this:
