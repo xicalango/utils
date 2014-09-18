@@ -1,5 +1,10 @@
 #!/usr/bin/env python2
 
+import fileinput
+import csv
+import json
+import sys
+
 def flattenDict(dictionaryList, includeHeader = False):
   lines = []
   columnNameToColumn = {}
@@ -36,3 +41,16 @@ def flattenDict(dictionaryList, includeHeader = False):
 
   return rows
 
+
+def main():
+  
+  jsonData = json.loads("".join((fileinput.input())))
+
+  listData = flattenDict(jsonData, includeHeader = True)
+
+  out = csv.writer(sys.stdout, quoting=csv.QUOTE_NONNUMERIC)
+  for row in listData:
+    out.writerow(row)
+
+if __name__ == '__main__':
+  main()
