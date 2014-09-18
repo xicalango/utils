@@ -39,11 +39,11 @@ Then you can access members like this:
 
 ```
 # print whole file:
-jsonql example.json
+jsonql.py example.json
 
 # print value of menu.id:
-jsonql example.json menu.id
+jsonql.py example.json menu.id
 
 # print second menuitem:
-jsonql example.json menu.popup.menuitem[1]
+jsonql.py example.json menu.popup.menuitem[1]
 ```
